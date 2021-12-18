@@ -12,7 +12,7 @@ But soon we will be getting started.
 
 Don't waste time, be part of it. 
 
-https://github.com/tbfraga/gamos-madScientistsDiary-/blob/main/README.md
+https://github.com/tbfraga/gamos-madScientistsDiary-
 
 I used the word 'mad', because nowadays it is crazy to keep scientific works being developed in secrecy.
 
