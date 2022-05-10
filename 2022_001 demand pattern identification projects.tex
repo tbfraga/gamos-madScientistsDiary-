@@ -1,0 +1,160 @@
+\documentclass[11pt,letterpaper,twocolumn]{article}
+\usepackage[brazilian, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{charter}
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{arydshln}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{
+  top=0.8in,            
+  inner=0.5in,
+  outer=0.5in,
+  bottom=0.9in,
+  headheight=4ex,       
+  headsep=6.5ex,         
+}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{subfiles}
+\usepackage[compact]{titlesec}
+\usepackage{stfloats}
+\usepackage{natbib,stfloats}
+
+\setlength{\columnsep}{30pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+      
+\fancyfoot{}
+\fancyfoot[C]{\thepage} % page
+\renewcommand{\headrulewidth}{0mm} % headrule width
+\renewcommand{\footrulewidth}{0mm} % footrule width
+
+\makeatletter
+\patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{} % headrule
+\patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
+\makeatother
+
+\definecolor{blueM}{cmyk}{1.0,0.49,0.0,0.47}
+
+\chead[C]{
+      \begin{tabular}{m{1.6cm}m{11.4cm}m{2.5cm}}
+      \includegraphics[height=1.5cm]{images/Einstein.png} 
+      &
+      \centering
+     \fcolorbox{white}{blueM}{\fbox{\begin{minipage}{11.5cm}
+     \centering
+     \textcolor{white}{Mad Scientists Diary}
+     \end{minipage}}}
+         &
+        \centering
+         \tiny{ \vspace{3.5mm} GAMOS\\%Para usar en otras carreras consulte a su coordinador
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          publication of works in progress\\ %Elija el ciclo que corresponda
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          }\tabularnewline
+%          \hline
+          \end{tabular}%
+    }
+    
+\begin{document}
+\twocolumn[\begin{@twocolumnfalse}
+
+
+%\begin{minipage}{0.15\textwidth}{
+%    \includegraphics[width=4cm]{images/Einstein.png}}
+%\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.90\textwidth}
+\vspace{5mm}
+    \center\Large{\textbf{Identificão de padrões de demanda para micro e pequenas empresas do Agreste Pernambucano}} 
+    \vspace{3mm}
+    
+    \large{\textbf{Tatiana Balbi Fraga}} 
+    \vspace{2mm}
+    
+    %\large{\textbf{Asesor 1: Nombre del Asesor$^1$} ; Asesor 2: Nombre del Asesor$^2$} \newline
+    %Si solo hay un asesor borrar el ``1''
+    \fontsize{0.35cm}{0.5cm}\selectfont \textit{Núcleo de Tecnologia, Centro Acadêmico do Agreste, Universidade Federal de Pernambuco}
+    \vspace{1mm} 
+    
+    \today % FECHA
+
+\end{minipage}
+
+\small
+
+\vspace{11pt}
+
+\centerline{\rule{0.95\textwidth}{0.4pt}}
+
+\begin{center}
+    
+    \begin{minipage}{0.9\textwidth}
+        % RESUMEN
+        \noindent \textbf{Abstract:} Idea and conception of the scientific article developed for IOSTE.
+    
+        \vspace{4mm}
+        % PALABRAS CLAVE
+        \noindent \textbf{Key words:} Pradrões de Demanda, Micro e Pequenas Empresas, Projetos de Pesquisa.
+    
+    \end{minipage}
+    
+\end{center}
+
+\centerline{\rule{0.95\textwidth}{0.4pt}}
+
+\vspace{15pt}
+\end{@twocolumnfalse}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introdução}
+
+A previsão de demanda é essencial para o bom planejamento em qualquer empresa. Através de uma boa previsão é possível, entre outras coisas, controlar melhor os níveis de estoque, reduzindo custos e oferecendo um melhor nível de serviço aos clientes. 
+
+Conforme mostra \cite{MakridakisHibon2000}, a literatura apresenta uma grande variedade de metodologias que podem ser utilizada para previões de demanda, sendo que a performance dos distintos modelos de previsão varia de acordo a natureza dos dados e um modelo que gera bons resultados para determinada classe de itens de uma empresa pode gerar previsões ruins para outros itens dessa mesma empresa.
+
+Uma estratégia natural utilizada para identificar o modelo de previsão adequado pra cada item consiste em comparar a performance dos distintos modelos candidatos utilizando dados históricos de vendas do item \citep{UlrichEtAl2022}. Contudo, como geralmente as empresas produzem e/ou comercializam uma grande variedade de itens, essa estratégia acaba se tornando um esforço considerável. De acordo com \cite{UlrichEtAl2022}, uma opção viável consiste em agrupar os itens de acordo com seus padrões de demanda, para posteriormente identificar o modelo de previsão adequado pra cada grupo e não para cada item individual. 
+
+O projeto elaborado por \cite{Fraga2019} propõem uma abordagem similar, contudo busca a identificação de padrões de demanda para os principais itens produzidos e/ou comercializados por um grupo de micro e pequenas empresas do Agreste Pernambucano, visando o desenvolvimento de uma metodologia combinada que seja adequada a um cojunto de padrões de demanda distintos e recorrentes nestas empresas. Como parte do projeto proposto por \cite{Fraga2019}, o GAMOS estará desenvolvendo subprojetos de pesquisa, buscando identitificar os padrões de demanda dos principais produtos de empresas de diferentes setores da região. Cada subprojeto buscará o atingimento dos seguintes objetivos:
+
+\begin{itemize}
+  \item identificação de metodologia atualmente aplicada para previsão de demanda na empresa;
+  \item identificação dos principais produtos; 
+  \item levantamento de dados (históricos de vendas e outros dados relevantes);
+  \item compreensão de metodologias aplicadas para identificação de padrão de demanda; e
+  \item identificação dos padrões de demanda.
+\end{itemize}
+  
+Os dados coletados nestes projetos, assim como os estudos realizados serão de grande importância científica, tendo em vista que serão utilizados para o desenvolvimento de uma nova metodologia de previsão de demanda combinada, e também poderão ser utilizados para outros trabalhos futuros relacionados ao setor, tornando se referência para diversos estudos que venham a ser desenvolvidos.
+
+
+\begin{thebibliography}{9}
+\bibitem[\protect\citeauthoryear{Makridakis e Hibon}{2000}]{MakridakisHibon2000}
+Makridakis, S. e Hibon, M. (2000) 'The M3-Competition: results, conclusions and implications'. {\it International Journal of Forecasting}, Vol. 16, pp.451--476.
+
+\bibitem[\protect\citeauthoryear{Ulrich et al.}{2022}]{UlrichEtAl2022}
+Ulrich, M., Jahnke, H., Langrock, R., Pesch, R., e Senge, R. (2022) 'Classification-based model selection in retail demand forecasting'. {\it International Journal of Forecasting}, Vol. 38 (1), pp.209--223.
+
+\bibitem[\protect\citeauthoryear{Fraga}{2019}]{Fraga2019}
+Fraga, T.B. (2019). 'Estudo de Métodos de Previsão de Demanda e Proposição de Metodologia Combinada no Contexto das Micro e Pequenas
+Empresas do Agreste Pernambucano'. Projeto de Pesquisa registrado em 09/11/2019, e aprovado pela Pró-reitoria de Pesquisa da UFPE em 11/02/2021 (Processo SIPAC 23076.057489/2019-21).
+\end{thebibliography} 
+
+\end{document}
+
