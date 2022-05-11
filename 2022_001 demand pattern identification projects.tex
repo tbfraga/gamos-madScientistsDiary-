@@ -154,14 +154,16 @@ De acordo com \cite{Ballou2006}, quando a demanda apresenta comportamento regula
 \cite{BoylanEtAl2008} distribuem os padrões de demanda entre normais, onde a demanda pode ser representada por uma distribuição normal, e não normais, no caso em que isso não é possível. De acordo com os autores, os padrões de demanda não normais podem ser classificados da seguinte forma:
 
 \begin{itemize}
-  \item um item de \emph{demanda intermitente} é um item com ocorrências de demanda pouco frequêntes;
-  \item um item de \emph{demanda de movimento lento} é um item cuja demanda média por período é baixa. Isso pode ser devido a ocorrências de demanda pouco frequentes, tamanhos médios de demanda baixos ou ambos;
-  \item um item de \emph{demanda errática} é um item cujo tamanho de demanda é altamente variável;
-  \item um item de \emph{demanda grumosa} é um item intermitente para o qual a demanda, quando ocorre, é altamente variável.; e
-  \item um item de \emph{demanda agregada} é um item intermitente para o qual a demanda, quando ocorre, é constante (ou quase constante).
+  \item um item de \emph{demanda intermitente (intermittent)} é um item com ocorrências de demanda pouco frequêntes;
+  \item um item de \emph{demanda de movimento lento (slow moving)} é um item cuja demanda média por período é baixa. Isso pode ser devido a ocorrências de demanda pouco frequentes, tamanhos médios de demanda baixos ou ambos;
+  \item um item de \emph{demanda errática (erratic)} é um item cujo tamanho de demanda é altamente variável;
+  \item um item de \emph{demanda esporádica (lumpy)} é um item intermitente para o qual a demanda, quando ocorre, é altamente variável.; e
+  \item um item de \emph{demanda agregada (clumped)} é um item intermitente para o qual a demanda, quando ocorre, é constante (ou quase constante).
 \end{itemize}
 
+Apesar da importância da identificação dos padrões de demanda para a previsão, poucos autores tratam deste assunto e poucas técnicas são apresentadas na literatura para essa finalidade.
 
+\cite{Williams1984} apresenta um método para classificação da demanda em suave (smooth), de movimento lento, ou esporádica, particionando a variância da demanda durante um lead time em suas partes causais constituintes: variância dos tamanhos dos pedidos, variância do número de pedidos e variância dos prazos de entrega.
 
 \begin{thebibliography}{9}
 
@@ -190,6 +192,8 @@ Ulrich, M., Jahnke, H., Langrock, R., Pesch, R., e Senge, R. (2022) 'Classificat
 \bibitem[\protect\citeauthoryear{Werner et al.}{2006}]{WernerEtAl2006}
 Werner, L, Lemos, F.O., Daudt, T. (2006) 'Previsão de demanda e níveis de estoque uma abordagem conjunta aplicada no setor siderúrgico'. {\it XIII SIMPEP}, Bauru, SP, Brasil.
 
+\bibitem[\protect\citeauthoryear{Williams}{1984}]{Williams1984}
+Williams, T.M. (1984). 'Stock control with sporadic and slow-moving demand'. {\it Journal of the Operational Research Society}, Vol. 35 (10), pp. 939–948. 
 
 \end{thebibliography} 
 
