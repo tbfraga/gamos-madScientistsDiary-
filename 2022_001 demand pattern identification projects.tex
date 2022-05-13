@@ -36,7 +36,6 @@
 \usepackage{natbib,stfloats}
 %\usepackage[style=abnt]{biblatex}
 
-
 \setlength{\columnsep}{30pt}
 
 \pagestyle{fancy}
@@ -163,7 +162,54 @@ De acordo com \cite{Ballou2006}, quando a demanda apresenta comportamento regula
 
 Apesar da importância da identificação dos padrões de demanda para identificação dos métodos adequados de previsão, poucos autores tratam deste assunto e poucas técnicas são apresentadas na literatura para essa finalidade.
 
-\cite{Williams1984} apresenta um esquema para classificação da demanda em suave (smooth), de movimento lento, ou esporádica, particionando a variância da demanda durante um lead time em suas partes causais constituintes: variância dos tamanhos dos pedidos, variância do número de pedidos e variância dos prazos de entrega. Tal esquema foi posteriomente revisado por \cite{EavesKingsman2004}, considerando também o padrão de demanda irregular.
+\cite{Williams1984} apresenta um esquema para classificação da demanda em suave (smooth), de movimento lento, ou esporádica, particionando a variabilidade da demanda durante um lead time $(C_{LTD}^{2})$ em suas partes causais constituintes: variabilidade dos números de pedidos $(\frac{C_{n}^{2}}{\bar{L}})$, variabilidade dos tamanhos dos pedidos $(\frac{C_{x}^{2}}{\bar{n}\bar{L}})$ e variabilidade dos prazos de entrega $(C_{L}^{2})$. 
+
+\begin{equation}
+C_{LTD}^{2} = \frac{C_{n}^{2}}{\bar{L}} + \frac{C_{x}^{2}}{\bar{n}\bar{L}} + C_{L}^{2}
+\end{equation}
+
+onde: \\
+
+$n$ representa os números de pedidos que chegam em unidades de tempo sucessivas (variáveis randômicas independetes e identicamente distribuídas (IIDRVs), com média $\bar{n}$ e variância $var(n)$), \\
+
+$x$ representa os tamanhos dos pedidos (IIDRVs, com média $\bar{x}$ e variância $var(x)$),  \\
+
+$L$ representa os prazos de entrega (IIDRVs, com média $\bar{L}$ e variância $var(L)$)), \\
+
+$C_{i}^{2}$ representa o coeficiente de variação de $i$ \\
+
+\begin{equation}
+C_{i}^{2} = \frac{s}{\bar{i}}
+\end{equation}
+
+onde: \\
+
+$\bar{i}$ é a média dos valores de $i$, e
+
+$s$ é o desvio padrão \\
+
+\begin{equation}
+s = \sqrt{ \frac{1}{z} \sum_{i=1}^{z}{(i-\bar{i})^2}}
+\end{equation}
+
+Tal esquema foi posteriomente revisado por \cite{EavesKingsman2004}, considerando também o padrão de demanda irregular, conforme mostra a tabela apresentada abaixo.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}[c]{c c c c}
+\cline {1-4}
+%\multirow{2}{*}{Atividade} & \multicolumn{6}{c ||}{Cronograma (bimestre)} \\ \cline {2-7}
+$\frac{C_{n}^{2}}{\bar{L}}$ & $\frac{C_{x}^{2}}{\bar{n}\bar{L}}$ & $C_{L}^{2}$ & padrão de demanda \\ \cline {1-4}
+baixo & baixo &  & suave   \\ 
+baixo & alto  &  & irregular   \\ 
+alto  & baixo &  & de movimento lento   \\
+alto  & alto  & baixo & intermitente   \\
+alto  & alto  & alto  & altamente intermitente   \\ \cline {1-4}
+\end{tabular}
+\label{tab:DemandPattern}
+\caption{Classificação dos padrões de demanda de acordo com \cite{EavesKingsman2004}.}
+\end{center}
+\end{table}
 
 \cite{BusingerRead1999} aplicam um sistema de agrupamento de itens utilizando um diagrama de plotagem em estrela com oito características dos dados de séries temporais: coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação.
 
