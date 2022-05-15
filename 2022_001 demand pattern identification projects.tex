@@ -40,9 +40,11 @@
 
 \pagestyle{fancy}
 \fancyhf{}
+
+\definecolor{blueM}{cmyk}{1.0,0.49,0.0,0.47}
       
-\fancyfoot{}
-\fancyfoot[C]{\thepage} % page
+\lfoot{\textcolor{blueM}{Fraga, T.B., \today.}}
+\rfoot[C]{\textcolor{blueM}{\thepage}} % page
 \renewcommand{\headrulewidth}{0mm} % headrule width
 \renewcommand{\footrulewidth}{0mm} % footrule width
 
@@ -51,9 +53,7 @@
 \patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
 \makeatother
 
-\definecolor{blueM}{cmyk}{1.0,0.49,0.0,0.47}
-
-\chead[C]{
+\chead[tiro]{
       \begin{tabular}{m{1.6cm}m{11.4cm}m{2.5cm}}
       \includegraphics[height=1.5cm]{images/Einstein.png} 
       &
@@ -212,7 +212,7 @@ d_i = \frac{y_i - y_{T}}{s_{T}}
 
 sendo $y_{T}$ e $s_{T}$, respectivamente, a média e o desvio padrão aparados (i.e., após retirar 20\% dos dados da amostra, sendo 10\% referente aos menores valores e 10\% referente aos maiores valores).
 
-A sazonalidade informa comportamentos que se repetem a cada ciclo (normalmente de 4 meses). \cite{BusingerRead1999} represetam a sazonalidade através da seguinte medida adimensional:
+A sazonalidade informa comportamentos que se repetem a cada ciclo (normalmente de 3 meses). \cite{BusingerRead1999} represetam a sazonalidade através da seguinte medida adimensional:
 
 \begin{equation}
 SS = 1 - \frac{ss_{w}}{ss_{T}}
@@ -244,7 +244,7 @@ e
 
 tal que: \\
 
-$y_{i}^w$ representa os dados winsorizados (i.e. após retirar 20\% dos dados da amostra, sendo 10\% referente aos menores valores e 10\% referente aos maiores valores, substituindo esses dados, respectivamente, pelo menor e pelo maior valor dentro do intervalo restante (\%80 dos dados)); \\
+$y_{i}^w$ representa os dados winsorizados (i.e. após retirar 20\% dos dados da amostra, sendo 10\% referente aos menores valores e 10\% referente aos maiores valores, substituindo esses dados, respectivamente, pelo menor e pelo maior valor dentro do intervalo de dados restantes (\%80 dos dados)); \\
 
 $n=4k+r$ representa o número total de períodos para $r = 0, 1, 2, 3$, sendo o período $(n_i)$, é definido por:
 
@@ -266,7 +266,7 @@ e
 x_{i(k+1)} = y_{n_i}^w \quad i = 1,...,r \quad r>0
 \end{equation}
 
-Após calculadas, as características coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação são utilizadas por \cite{BusingerRead1999} para agurpamento dos itens, sendo então identificado qual modelo ARIMA é mais adequado para cada grupo.
+Após calculadas, as características coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação são utilizadas por \cite{BusingerRead1999} para agurpamento dos itens, sendo então identificado qual modelo ARIMA é mais adequado para cada grupo. \\
 
 \cite{Williams1984} apresenta um esquema para classificação da demanda em suave (smooth), de movimento lento, ou esporádica, particionando a variabilidade da demanda durante um lead time $(C_{LTD}^{2})$ em suas partes causais constituintes: variabilidade dos números de pedidos $(\frac{C_{n}^{2}}{\bar{L}})$, variabilidade dos tamanhos dos pedidos $(\frac{C_{x}^{2}}{\bar{n}\bar{L}})$ e variabilidade dos prazos de entrega $(C_{L}^{2})$. 
 
