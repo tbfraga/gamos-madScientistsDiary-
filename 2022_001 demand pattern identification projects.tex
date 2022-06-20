@@ -168,165 +168,7 @@ De acordo com \cite{Ballou2006}, quando a demanda apresenta comportamento regula
 
 Apesar da importância da identificação dos padrões de demanda para identificação dos métodos adequados de previsão, poucos autores tratam deste assunto e poucas técnicas são apresentadas na literatura para essa finalidade.
 
-\cite{BusingerRead1999} aplicam um sistema de agrupamento de itens utilizando um diagrama de plotagem em estrela considerando oito características dos dados de séries temporais: coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação.
-
-O coeficiente de variação $(CV)$ informa a variabilidade em relação à média. Essa medida adimensional informa o nível de dispersão: quanto mais alto for o $(CV)$, mais alta é a dispersão:
-
-\begin{equation}
-CV = \frac{s}{\bar{i}}
-\end{equation}
-
-onde: 
-
-$\bar{i}$ é a média dos valores considerados, e
-
-$s$ é o desvio padrão 
-
-\begin{equation}
-s = \sqrt{ \frac{1}{N} \sum_{i=1}^{N}{(i-\bar{i})^2}}
-\end{equation}
-
-O número de zeros $(NZ)$ é uma medida que indica o número de períodos com demanda zero (nula) dentro de determinado intervalo de tempo. 
-
-\begin{equation}
-NZ = \sum_{i=1}^{N}{I(y_i=0)}
-\end{equation}
-
-Onde $I(A)=1$, se $A$ é verdadeiro, e $I(A)=0$, se $A$ é falso.
-
-Essa medida é, em alguns casos, associada à intermitência. Sendo $BP$ um valor de corte, se $(NZ\geq BP)$ então a demanda é considerada intermitente \citep{BoylanEtAl2008}.
-
-A tendência $(T)$ apresenta um padrão de variação suave e temporário na demanda. Para cáculo da tendência, \cite{BusingerRead1999} dividem os dados avaliados em terços e calculam a tendência usando a seguinte expressão:
-
-\begin{equation}
-T = \frac{(Y_U - Y_L)}{(Y_{(\frac{5}{6})} - Y_{(\frac{1}{6})})}
-\end{equation}
-
-Onde $Y_U$ e $Y_L$ representam as medianas dos terços extremos, sendo $L$ o terço inferior, e $U$ o terço superior. Observe que $-1 \geq T \leq 1$.
-
-Picos $(P)$ é uma característica que informa sobre padrões nos dados temporais que podem representar anomalias ou dados súbitos.
-
-\begin{equation}
-P = \sum_{i=1}^{N}{I(d_i > 2)}
-\end{equation}
-
-onde:
-
-\begin{equation}
-d_i = \frac{y_i - y_{T}}{s_{T}}
-\end{equation}
-
-sendo $y_{T}$ e $s_{T}$, respectivamente, a média e o desvio padrão aparados (i.e., após retirar 20\% dos dados da amostra, sendo 10\% referente aos menores valores e 10\% referente aos maiores valores).
-
-A sazonalidade informa comportamentos que se repetem a cada ciclo (normalmente de 3 meses). \cite{BusingerRead1999} represetam a sazonalidade através da seguinte medida adimensional:
-
-\begin{equation}
-SS = 1 - \frac{ss_{w}}{ss_{T}}
-\end{equation}
-
-onde:
-
-\begin{equation}
-ss_{w} = \sum_{i=1}^{4}\sum_{j=i}^{n_i}{x_{ij}}
-\end{equation}
-
-e
-
-\begin{equation}
-ss_{T} = \sum_{i}\sum_{j}{(x_{ij}-\bar{x})^2}
-\end{equation}
-
-sendo:
-
-\begin{equation}
-\bar{x_i} = \frac{1}{n_i} \sum_{j=1}^{n_i}{x_{ij}}
-\end{equation}
-
-e
-
-\begin{equation}
-\bar{x} = \frac{1}{n} \sum_{i=1}^{4}{n_i \bar{x_i}}
-\end{equation}
-
-tal que: 
-
-$y_{i}^w$ representa os dados winsorizados (i.e. após retirar 20\% dos dados da amostra, sendo 10\% referente aos menores valores e 10\% referente aos maiores valores, substituindo esses dados, respectivamente, pelo menor e pelo maior valor dentro do intervalo de dados restantes (\%80 dos dados)); 
-
-$n=4k+r$ representa o número total de períodos para $r = 0, 1, 2, 3$, sendo o período $(n_i)$, é definido por:
-
-\begin{equation}
-n_i = 
-\begin{cases}
-4k, \ \quad \mathrm{se} \quad r =0 \\
-4k + i, \quad \mathrm{se} \quad r > 0
-\end{cases}
-\end{equation}
-
-\begin{equation}
-x_{ij} = y_{i+4(j-1)}^w \quad i = 1,...,4 \quad j=1,...,k
-\end{equation}
-
-e
-
-\begin{equation}
-x_{i(k+1)} = y_{n_i}^w \quad i = 1,...,r \quad r>0
-\end{equation}
-
-De acordo com \cite{BusingerRead1999}, a característica corrida representa um intervalo no qual observações sucessivas ocorrem todas no mesmo lado da mediana do processo. \cite{BusingerRead1999} utilizam o número de corridas acima e abaixo da mediana. Os autores afirmam que um valor baixo para o número total de corridas pode confirmar uma tendência; enquanto que um valor alto sugere agrupamento ou outro comportamento oscilatório.
-
-\begin{equation}
-Run = \frac{|R - E[R]|}{\sqrt{Var(R)}}
-\end{equation}
-
-onde: 
-
-R representa a soma dos números de corridas abaixo e acima da mediana (após exclusão dos valores iguais à mediana),
-
-\begin{equation}
-E[R] = 1 + \frac{2n_1n_2}{n_1 + n_2}
-\end{equation}
-
-\begin{equation}
-Var(R) = \frac{2n_1n_2(2n_1n_2 - n_1 - n_2)}{(n_1 + n_2)^2(n_1+n_2-1)}
-\end{equation}
-
-sendo:
-
-$n_1$ o número total de observação acima da mediana; e
-
-$n_2$ o número total de observação abaixo da mediana.
-
-A assimetria $(A)$ é a razão entre a média aritmética $(\bar{y})$ e a mediana $(m)$.
-
-\begin{equation}
-A = \frac{\bar{y}}{m}
-\end{equation}
-
-Valores de $A$ maiores que 1, indicam uma assimetria positiva, e valores de $A$ menores do que 1, indicam uma assimentria negativa.
-
-A correlação $CR$ indica a relação entre dois semestres subsequentes:
-
-\begin{equation}
-CR = \frac{|RVN-2|}{\sigma}
-\end{equation}
-
-onde:
-
-\begin{equation}
-\sigma^2 = \frac{4(n-2)(5n^2-2n-9}{5n(n+1)(n-1)^2}
-\end{equation}
-
-\begin{equation}
-RVN = \frac{12NM}{n(n^2-1)}
-\end{equation}
-
-\begin{equation}
-NM = \sum_{i=1}^{n-1}{[r_i-r_{i+1}]^2}
-\end{equation}
-
-$r_i$ representa o rank de $y_i$.
-
-Após calculadas, as características coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação são utilizadas por \cite{BusingerRead1999} para agurpamento dos itens, sendo então identificado qual modelo ARIMA é mais adequado para cada grupo. 
+\cite{BusingerRead1999} aplicam um sistema de agrupamento de itens utilizando um diagrama de plotagem em estrela considerando oito características admensionais dos dados de séries temporais: coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação. Tais características são utilizadas pelos autores para identificação de quais modelos ARIMA são mais adequados para os diferentes grupos identificados. 
 
 \cite{Williams1984} apresenta um esquema para classificação da demanda em suave (smooth), de movimento lento, ou esporádica, particionando a variabilidade da demanda durante um lead time $(C_{LTD}^{2})$ em suas partes causais constituintes: variabilidade dos números de pedidos $(\frac{C_{n}^{2}}{\bar{L}})$, variabilidade dos tamanhos dos pedidos $(\frac{C_{x}^{2}}{\bar{n}\bar{L}})$ e variabilidade dos prazos de entrega $(C_{L}^{2})$. 
 
@@ -398,7 +240,7 @@ Atividade 4: compreensão das metodologias aplicadas para identificação de pad
 
 Atividade 5: aplicação dos metodologias de identificação de padrões de demanda e análise dos resultados.\\
 
-Atividade 6: preparação de relatórios e artigos para o CONIC.
+Atividade 6: preparação de relatórios e artigos para congressos e / ou revistas.
 
 \section{Resulados esperados}
 
@@ -408,7 +250,7 @@ Após a aplicação da metodologia acima descrita, esperamos esperamos obter os 
     \item dados de históricos de vendas dos principais produtos das empresas estudadas;
     \item mapeamento dos padrões de demanda destes produtos;
     \item aprofundamento do conhecimento dos participantes dos projetos sobre os comportamentos de vendas e sobre a identificação de padrões de demanda;
-    \item artigo apresentado no CONIC.
+    \item artigos apresentado em congressos.
 \end{itemize}
 
 Os resultados destes trabalhos também serão incluídos em pelo menos um artigo que será submetido para revista.
