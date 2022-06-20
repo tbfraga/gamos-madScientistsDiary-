@@ -44,7 +44,7 @@
 
 \definecolor{blueM}{cmyk}{1.0,0.49,0.0,0.47}
       
-\lfoot{\textcolor{blueM}{Fraga, T.B., \today.}}
+\lfoot{\textcolor{blueM}{Fraga, T.B. (\the\year). Identificão de padrões de demanda. \emph{Mad Scientists Diary}.}}
 \rfoot[C]{\textcolor{blueM}{\thepage}} % page
 \renewcommand{\headrulewidth}{0mm} % headrule width
 \renewcommand{\footrulewidth}{0mm} % footrule width
@@ -53,8 +53,11 @@
 \patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{} % headrule
 \patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
 \makeatother
-
-\chead[tiro]{
+    
+\fancypagestyle{firstpage}
+{
+    
+    \chead[]{
       \begin{tabular}{m{1.6cm}m{11.4cm}m{2.5cm}}
       \includegraphics[height=1.5cm]{images/Einstein.png} 
       &
@@ -73,17 +76,19 @@
 %          \hline
           \end{tabular}%
     }
+}
     
 \begin{document}
 \twocolumn[\begin{@twocolumnfalse}
-
 
 %\begin{minipage}{0.15\textwidth}{
 %    \includegraphics[width=4cm]{images/Einstein.png}}
 %\end{minipage}
 \hspace{25pt}
 \begin{minipage}{0.90\textwidth}
+\thispagestyle{firstpage}
 \vspace{5mm}
+    
     \center\Large{\textbf{Identificão de padrões de demanda}} 
     \vspace{3mm}
     
@@ -109,7 +114,7 @@
     
     \begin{minipage}{0.9\textwidth}
         % RESUMEN
-        \noindent \textbf{Abstract:} Este artigo trata do texto elaborado para projetos de pesquisa a serem desenvolvidos por alunos e professores da equipe GAMOS. Tais projetos serão desenvolvidos em diferentes empresas do Agreste Pernambucano, como parte do Projeto de Pesquisa 'Estudo de Métodos de Previsão de Demanda e Proposição de Metodologia Combinada no Contexto das Micro e Pequenas Empresas do Agreste Pernambucano', especialmente na forma de projetos de iniciação científica ou projetos de conclusão de curso. 
+        \noindent \textbf{Abstract:} Este artigo trata dos projetos de pesquisa desenvolvidos por alunos e professores da equipe GAMOS. Tais projetos estão sendo desenvolvidos em diferentes empresas do Agreste Pernambucano, como parte do Projeto de Pesquisa 'Estudo de Métodos de Previsão de Demanda e Proposição de Metodologia Combinada no Contexto das Micro e Pequenas Empresas do Agreste Pernambucano', especialmente na forma de projetos de iniciação científica ou projetos de conclusão de curso. 
     
         \vspace{4mm}
         % PALABRAS CLAVE
@@ -298,6 +303,28 @@ A = \frac{\bar{y}}{m}
 \end{equation}
 
 Valores de $A$ maiores que 1, indicam uma assimetria positiva, e valores de $A$ menores do que 1, indicam uma assimentria negativa.
+
+A correlação $CR$ indica a relação entre dois semestres subsequentes:
+
+\begin{equation}
+CR = \frac{|RVN-2|}{\sigma}
+\end{equation}
+
+onde:
+
+\begin{equation}
+\sigma^2 = \frac{4(n-2)(5n^2-2n-9}{5n(n+1)(n-1)^2}
+\end{equation}
+
+\begin{equation}
+RVN = \frac{12NM}{n(n^2-1)}
+\end{equation}
+
+\begin{equation}
+NM = \sum_{i=1}^{n-1}{[r_i-r_{i+1}]^2}
+\end{equation}
+
+$r_i$ representa o rank de $y_i$.
 
 Após calculadas, as características coeficiente de variação, número de zeros, tendência, picos (outliers), sazonalidade, corridas, assimetria e autocorrelação são utilizadas por \cite{BusingerRead1999} para agurpamento dos itens, sendo então identificado qual modelo ARIMA é mais adequado para cada grupo. 
 
