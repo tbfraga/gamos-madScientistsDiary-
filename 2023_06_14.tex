@@ -1,0 +1,190 @@
+\documentclass[11pt,latterpaper,twocolumn]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{charter}
+\usepackage{amsmath}
+%\usepackage{appendix}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+%\usepackage{arydshln}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{
+  top=0.8in,            
+  inner=0.5in,
+  outer=0.5in,
+  bottom=0.9in,
+  headheight=4ex,       
+  headsep=6.5ex,         
+}
+\usepackage{graphicx}
+\usepackage{mathtools}
+%\usepackage{multirow}
+\usepackage{pdfpages}
+%\usepackage{subfiles}
+%\usepackage[compact]{titlesec}
+%\usepackage{stfloats}
+%\usepackage{natbib,stfloats}
+\usepackage[parfill]{parskip}
+%\usepackage[style=abnt]{biblatex}
+
+\setlength{\columnsep}{30pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\definecolor{blueM}{cmyk}{1.0,0.49,0.0,0.47}
+      
+\lfoot{\textcolor{blueM}{Fraga, T.B. (\the\year). What I'm working on now. \emph{Mad Scientists Diary}.}}
+\rfoot[C]{\textcolor{blueM}{\thepage}} % page
+\renewcommand{\headrulewidth}{0mm} % headrule width
+\renewcommand{\footrulewidth}{0mm} % footrule width
+
+\makeatletter
+\patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{} % headrule
+\patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
+\makeatother
+    
+\fancypagestyle{firstpage}
+{   
+    \chead[]{
+      \begin{tabular}{m{1.6cm}m{11.4cm}m{2.5cm}}
+      \includegraphics[height=1.5cm]{images/Einstein.png} 
+      &
+      \centering
+     \fcolorbox{white}{blueM}{\fbox{\begin{minipage}{11.5cm}
+     \centering
+     \textcolor{white}{Mad Scientists Diary}
+     \end{minipage}}}
+         &
+        \centering
+         \tiny{ \vspace{3.5mm} GAMOS\\%Para usar en otras carreras consulte a su coordinador
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          publication of works in progress\\ %Elija el ciclo que corresponda
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          }\tabularnewline
+         %\hline
+         \end{tabular}
+   }
+}
+    
+\begin{document}
+
+\twocolumn[\begin{@twocolumnfalse}
+
+\hspace{25pt}
+\begin{minipage}{0.90\textwidth}
+\thispagestyle{firstpage}
+\vspace{5mm}
+    \center\Large{\textbf{What I'm working on now}} 
+    \vspace{3mm}
+    
+    \large{\textbf{Tatiana Balbi Fraga}} 
+    \vspace{2mm}
+    
+    %\large{\textbf{Asesor 1: Nombre del Asesor$^1$} ; Asesor 2: Nombre del Asesor$^2$} \newline
+    %Si solo hay un asesor borrar el ``1''
+    \fontsize{0.35cm}{0.5cm}\selectfont \textit{Centro Acadêmico do Agreste, Universidade Federal de Pernambuco}
+    \vspace{1mm} 
+    
+    \today % FECHA
+\end{minipage}
+
+\small
+
+\vspace{11pt}
+
+\centerline{\rule{0.95\textwidth}{0.4pt}}
+
+\begin{center}
+    
+    \begin{minipage}{0.9\textwidth}
+        % RESUMEN
+        \noindent \textbf{Abstract:} In this paper I present a summary of the work that the GAMOS team is currently developing with my participation and coordenation. 
+    
+        \vspace{4mm}
+        % PALABRAS CLAVE
+        \noindent \textbf{Key words:} GAMOS, work in progress.
+    
+    \end{minipage}
+    
+\end{center}
+
+\centerline{\rule{0.95\textwidth}{0.4pt}}
+
+\vspace{15pt}
+\end{@twocolumnfalse}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{GAMOS work in progress}
+
+It's now halfway through June and I'm coordinating and participating in two research projects - 'Study of Demand Forecasting Methods and Proposition of a Combined Methodology in the Context of Micro and Small Enterprises in Agreste Pernambucano' and 'Analysis and Modeling of Continuous and Combinatorics Optimization Problems'. As explained better in the following sections.
+
+\section{Study of Demand Forecasting Methods and Proposition of a Combined Methodology in the Context of Micro and Small Enterprises in Agreste Pernambucano}
+
+This project was proposed on 2019/11/09 but accepted by the UFPE research board only on 2021/02/11, when we started developing it. Since I'm doing a lot of work simultaneously, I have not yet gone further with this project.
+
+So far, as part of this project, I am supervising two scientific initiation projects: a PIBIC project entitled 'Identification of demand patterns for a company in the plastics sector' and an undergraduate project entitled ' 'Identification of demand patterns for a company in the furniture trade sector'. In these two projects we were able to carry out a large survey of data from two companies in these two sectors studied and, due to the large number of products, we used a multicriteria method for ABC classification of the products.
+
+In this second part of the semester, we will apply methods to identify the demand pattern for products identified as class A by the multicriteria classification method used.
+
+We hope to finalize this part of the work with a publication in a congress, and possibly in a scientific journal.
+
+As future work, we are going to identify demand forecasting methods suited to the patterns studied and propose a combined methodology, comparing the results found from the combined methodology and the methodologies used in the combination.
+
+\section{Analysis, Modeling and Solution of Continuous and Combinatorics Optimization Problems}
+
+I have alread fineshed the publication of two problems I were working on - 
+
+%\begin{thebibliography}{9}
+
+%\bibitem[\protect\citeauthoryear{Ballou}{2001}]{Ballou2001}
+%Ballou, R.H. (2001).{\it Gerenciamento da Cadeia de Suprimentos: Planejamento, Organização e Logística Empresarial}, 4. ed., Porto Alegre: Bookman.
+
+%\bibitem[\protect\citeauthoryear{Ballou}{2006}]{Ballou2006}
+%Ballou, R.H. (2006).{\it Gerenciamento da Cadeia de Suprimentos / Logística Empresarial}, 5. ed., Porto Alegre: Bookman.
+
+%\bibitem[\protect\citeauthoryear{Boylan et al.}{2008}]{BoylanEtAl2008}
+%Boylan, J.E., Syntetos, A.A., e Karakostas, G.C. (2008). 'Classification for forecasting and stock control:a case study'. {\it Journal of the Operational Research Society}, Vol. 59, pp. 473--481.
+
+%\bibitem[\protect\citeauthoryear{Businger e Read}{1999}]{BusingerRead1999}
+%Businger, M.P., e Read, R.R. (1999). 'Identification of demand patterns for selective processing: acase study'. {\it Omega, Int. J. Mgmt Sci.}, Vol. 27, pp. 189--200.
+
+%\bibitem[\protect\citeauthoryear{Eaves e Kingsman}{2004}]{EavesKingsman2004}
+%Eaves A.H.C., e Kingsman B.G. (2004). 'Forecasting for the ordering and stock-holding of spare parts'. {\it J. O. Opl. Res. Soc.}, Vol. 55, pp. 431--437.
+
+%\bibitem[\protect\citeauthoryear{Fraga}{2019}]{Fraga2019}
+%Fraga, T.B. (2019). 'Estudo de Métodos de Previsão de Demanda e Proposição de Metodologia Combinada no Contexto das Micro e Pequenas
+%Empresas do Agreste Pernambucano'. Projeto de Pesquisa registrado em 09/11/2019, e aprovado pela Pró-reitoria de Pesquisa da UFPE em 11/02/2021 (Processo SIPAC 23076.057489/2019-21).
+
+%\bibitem[\protect\citeauthoryear{Makridakis et al.}{1998}]{MakridakisEtAl1998}
+%Makridakis, S.G.,Wheelwright, S.C., Hyndman, R.J. (1998).{\it Forecasting: Methods and Applications}, 3. ed., Wiley.
+
+%\bibitem[\protect\citeauthoryear{Makridakis e Hibon}{2000}]{MakridakisHibon2000}
+%Makridakis, S. e Hibon, M. (2000) 'The M3-Competition: results, conclusions and implications'. {\it International Journal of Forecasting}, Vol. 16, pp. 451--476.
+
+%\bibitem[\protect\citeauthoryear{Syntetos et al.}{2005}]{SyntetosEtAl2005}
+%Syntetos, A.A., Boylan, J.E., e Croston, J.D. (2005) 'On the categorization of demand patterns'. {\it Journal of the Operational Research Society}, Vol. 56 (5), pp. 495--503.
+
+%\bibitem[\protect\citeauthoryear{Ulrich et al.}{2022}]{UlrichEtAl2022}
+%Ulrich, M., Jahnke, H., Langrock, R., Pesch, R., e Senge, R. (2022) 'Classification-based model selection in retail demand forecasting'. {\it International Journal of Forecasting}, Vol. 38 (1), pp. 209--223.
+
+%\bibitem[\protect\citeauthoryear{Werner et al.}{2006}]{WernerEtAl2006}
+%Werner, L, Lemos, F.O., Daudt, T. (2006) 'Previsão de demanda e níveis de estoque uma abordagem conjunta aplicada no setor siderúrgico'. {\it XIII SIMPEP}, Bauru, SP, Brasil.
+
+%\bibitem[\protect\citeauthoryear{Williams}{1984}]{Williams1984}
+%Williams, T.M. (1984). 'Stock control with sporadic and slow-moving demand'. {\it Journal of the Operational Research Society}, Vol. 35 (10), pp. 939–948. 
+
+%\end{thebibliography} 
+
+\end{document}
+
